@@ -1,14 +1,16 @@
-const { ipcRenderer } = require('electron')
+import { firestore } from "./firebase.js";
 
 window.onload = () => { 
-  const email = document.getElementById("login-email")
-  const password = document.getElementById("login-password")
+  const email = document.getElementById("login-email");
+  const password = document.getElementById("login-password");
   const btnlogin = document.getElementById("login")
 
-  btnlogin.onclick = () => {
-    
-    const user = { email, password };
-
-    ipcRenderer.invoke('login', user);
-  }
+  btnlogin.addEventListener("click", async() => {
+    const user = { 
+      email: email.value, 
+      password: password.value
+    };
+    console.log(user)
+  })
+  
 }
