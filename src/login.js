@@ -1,4 +1,4 @@
-import { firestore } from "./firebase.js";
+const { db } = require("./config");
 
 window.onload = () => { 
   const email = document.getElementById("login-email");
@@ -11,6 +11,8 @@ window.onload = () => {
       password: password.value
     };
     console.log(user)
+    const response = await db.collection("users").doc().set(user);
+    console.log("hecho")
   })
   
 }
