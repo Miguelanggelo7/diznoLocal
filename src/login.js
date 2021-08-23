@@ -1,4 +1,4 @@
-const { db } = require("./config");
+const { loginEmailAndPass } = require("./functions");
 
 window.onload = () => { 
   const email = document.getElementById("login-email");
@@ -8,11 +8,21 @@ window.onload = () => {
   btnlogin.addEventListener("click", async() => {
     const user = { 
       email: email.value, 
-      password: password.value
+      pass: password.value
     };
-    console.log(user)
-    const response = await db.collection("users").doc().set(user);
-    console.log("hecho")
+    
+    try {
+      await loginEmailAndPass(user.email.trim(), user.pass);
+    }catch (err) {
+      if (err.code === "auth/invalid-email") {
+
+      } else if (err.code === "auth/user-not-found") {
+
+      } else if (err.code === "auth/wrong-password") {
+
+      }
+    }
+
   })
   
 }

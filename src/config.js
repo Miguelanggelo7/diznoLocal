@@ -28,4 +28,14 @@ const analytics = firebase.analytics();
 // Storage
 const storage = firebase.storage();
 
+db.enablePersistence().catch(function (err){
+  console.log(err.message);
+})
+
+auth.onAuthStateChanged(user => {
+  if(user){
+    window.location = 'index.html';
+  }
+});
+
 module.exports = { auth, db, analytics, storage };

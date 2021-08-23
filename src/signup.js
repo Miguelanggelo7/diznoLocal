@@ -1,19 +1,29 @@
-const { ipcRenderer } = require('electron')
+const { registration } = require("./functions");
 
 window.onload = () => { 
   const email = document.getElementById("register-email")
   const password = document.getElementById("register-password" )
-  const confirmPass = document.getElementById('confirm-password')
+  const confirmPassword = document.getElementById('confirm-password')
   const btnSignup = document.getElementById('signup')
 
-  if(password !== confirmPass){
-    //TODO son diferentes
-  }
+  btnSignup.addEventListener("click", async() => {
+    const user = { 
+      email: email.value, 
+      pass: password.value,
+      confirmPass: confirmPassword.value
+    };
 
-  btnSignup.onclick = () => {
-    
-    const user = { email, password };
-
-    ipcRenderer.invoke('signup', user);
-  }
+    try {
+      await registration(user);
+    }catch(err){
+      if(err === 'error-same-email'){
+        // There's a same email registered
+        console.log(err)
+      }
+      if(err === 'error-different-passwords'){
+        // Password and confirm passwords are differents
+        console.log(err)
+      }
+    }
+  })
 }

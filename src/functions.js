@@ -1,24 +1,26 @@
 const { auth, db } = require("./config.js");
 
 // Log in with email and password
-export const loginEmailAndPass = (email, pass) => {
+const loginEmailAndPass = (email, pass) => {
   const promise = auth.signInWithEmailAndPassword(email, pass);
   return promise;
 };
 
 // Logout
-export const logout = () => {
+const logout = () => {
   auth.signOut();
 };
 
 // Get all users 
-export const getUsers = async () => {
-  const users = db.collection("users").get();
+const getUsers = async () => {
+  const users = await db.collection("users").get();
   return users.docs.map((user) => user.data());
 }
 
 // User Registration
-export const registration = async(user) => {
+const registration = async(user) => {
+  if(user.pass !== user.confirmPass) throw 'error-different-passwords';
+
   const users = await getUsers();
 
   // Verify that the user exists
@@ -27,8 +29,30 @@ export const registration = async(user) => {
   const response = await auth.createUserWithEmailAndPassword(
     user.email,
     user.pass
-  )
+  );
 
-  
-  
+  const uid = response.user.uid;
+
+  const data = {
+    uid,
+    email: user.email
+  }
+
+  return db.collection('users').doc(uid).set(data);
+}
+
+const updateUser = async (user, newUser) => {
+  const promise = db
+    .collection('users') 
+    .doc(user.uid)
+    .update(newUser);
+  return promise;
+};
+
+module.exports = {
+  loginEmailAndPass,
+  logout,
+  getUsers,
+  registration,
+  updateUser,
 }
