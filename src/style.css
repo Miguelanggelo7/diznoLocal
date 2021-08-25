@@ -283,6 +283,22 @@ section.tabSection {
     background-color: rgba(187, 187, 187, 0.356);
 }
 
+#blank-space{
+    display: none;
+}
+
+#user-not-found{
+    display: none;
+}
+
+#invalid-email{
+    display: none;
+}
+
+#wrong-pswd{
+    display: none;
+}
+
 .flex-div{
     display: inline-flex;
 }

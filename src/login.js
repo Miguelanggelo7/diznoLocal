@@ -25,13 +25,13 @@ window.onload = () => {
       await loginEmailAndPass(user.email.trim(), user.pass);
     }catch (err) {
       if (err.code === "auth/invalid-email") {
-
+        document.getElementById("invalid-email").style.display = "flex";
       } else if (err.code === "auth/user-not-found") {
-
+        document.getElementById("user-not-found").style.display = "flex";
       } else if (err.code === "auth/wrong-password") {
-
+        document.getElementById("wrong-pswd").style.display = "flex";
       } else if (err === 'empty-values') {
-        console.log('empty-values')
+        document.getElementById("blank-space").style.display = "flex";
       }
     }
 
