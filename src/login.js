@@ -23,7 +23,9 @@ window.onload = () => {
     };
     
     try {
-      loading.hidden = false;
+      loading.style.display = "flex"
+      loading.style.margin = "auto";
+      loading.style.marginBottom = "30px";
       await loginEmailAndPass(user.email.trim(), user.pass);
     }catch (err) {
       if (err.code === "auth/invalid-email") {
@@ -36,9 +38,8 @@ window.onload = () => {
         console.log('empty-values')
       }
     } finally{
-      loading.style.display = "flex";
-      loading.style.margin = "auto";
-      loading.style.marginBottom = "30px";
+      loading.style.display = "none";
+      
     }
 
   })

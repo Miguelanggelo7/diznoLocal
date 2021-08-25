@@ -17,7 +17,9 @@ window.onload = () => {
     };
 
     try {
-      loading.hidden = false;
+      loading.style.display = "flex";
+      loading.style.margin = "auto";
+      loading.style.marginBottom = "30px";
       await registration(user);
     }catch(err){
       if (err === 'error-same-email') {
@@ -32,9 +34,7 @@ window.onload = () => {
         console.log(err)
       }
     }finally{
-      loading.style.display = "flex";
-      loading.style.margin = "auto";
-      loading.style.marginBottom = "30px";
+      loading.style.display = "none";
     }
   })
 }
