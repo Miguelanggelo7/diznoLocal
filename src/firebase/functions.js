@@ -27,6 +27,7 @@ const getUsers = async () => {
 
 // User Registration
 const registration = async(user) => {
+  if(user.email === "" || user.pass === "" || user.confirmPass === "") throw 'empty-values';
   if(user.pass !== user.confirmPass) throw 'error-different-passwords';
 
   const users = await getUsers();
