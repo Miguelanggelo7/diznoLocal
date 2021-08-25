@@ -259,6 +259,20 @@ section.tabSection {
     text-decoration: none;
 }
 
+#reset-pswd{
+    background-color: transparent;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: none;
+    color: #939FAA;
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+}
+
+#reset-pswd:hover {
+    color: #4a4f55;
+}
+
 @media (min-width: 1200px) {
 	section.tabSection .container {
        max-width: 950px;
@@ -279,9 +293,7 @@ section.tabSection {
 }
 
 @media (min-width: 800px) {
-	.container-info-account{
-        display: inline-flex;
-    }
+
     .box-info-account{
         margin-left: 10px;
         margin-right: 10px;
@@ -299,7 +311,12 @@ section.tabSection {
 	.sidebox {
 		max-width: 100%;
 	}
-
+    #email-user{
+        width: 30vw;
+    }
+    #pswd-user{
+        width: 30vw;
+    }
 }
 
 @media (max-width: 480px) {
