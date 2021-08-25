@@ -15,12 +15,14 @@
 </head>
 <body class="login-background">
   <div id="container-login">
+    <div class="spinner-border text-primary" id="loading" hidden></div>
     <h5 class="title-form">Welcome to Diznote (Beta)</h5>
     <a class="float-button" href="signup.html">Sign Up</a>
     <form>
       <input type="email" class="input-form" id="login-email" placeholder="Email address">
       <input type="password" class="input-form" id="login-password" placeholder="Password">
       <input type="button" class="button-form" id="login" value="Login"/>
+
     </form>
     <a id="login-forgotpsw" class="open-modal" data-toggle="modal" data-target="#exampleModalCenter" href="">Forgot password</a>
   </div>
@@ -45,6 +47,7 @@
       </div>
     </div>
   </div>
+  
   
   <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 

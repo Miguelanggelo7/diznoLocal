@@ -14,6 +14,7 @@ window.onload = () => {
   const email = document.getElementById("login-email");
   const password = document.getElementById("login-password");
   const btnlogin = document.getElementById("login");
+  const loading = document.getElementById('loading');
 
   btnlogin.addEventListener("click", async() => {
     const user = { 
@@ -22,6 +23,7 @@ window.onload = () => {
     };
     
     try {
+      loading.hidden = false;
       await loginEmailAndPass(user.email.trim(), user.pass);
     }catch (err) {
       if (err.code === "auth/invalid-email") {
@@ -33,6 +35,8 @@ window.onload = () => {
       } else if (err === 'empty-values') {
         console.log('empty-values')
       }
+    } finally{
+      loading.hidden = true;
     }
 
   })
