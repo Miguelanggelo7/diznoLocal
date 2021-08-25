@@ -32,8 +32,6 @@ const registration = async(user) => {
   const users = await getUsers();
 
   // Verify that the user exists
-  if(users.some(a => a.email === user.email)) throw 'error-same-email';
-
   const response = await auth.createUserWithEmailAndPassword(
     user.email,
     user.pass

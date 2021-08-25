@@ -18,11 +18,10 @@ window.onload = () => {
     try {
       await registration(user);
     }catch(err){
-      if(err === 'error-same-email'){
+      if (err === 'error-different-passwords') {
         // There's a same email registered
-        console.log(err)
-      }
-      if(err === 'error-different-passwords'){
+        document.getElementById("different-pass").style.display = "flex";
+      } else if (err.code === '') {
         // Password and confirm passwords are differents
         console.log(err)
       }
