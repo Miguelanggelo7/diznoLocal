@@ -36,7 +36,9 @@ window.onload = () => {
         console.log('empty-values')
       }
     } finally{
-      loading.hidden = true;
+      loading.style.display = "flex";
+      loading.style.margin = "auto";
+      loading.style.marginBottom = "30px";
     }
 
   })
