@@ -295,6 +295,22 @@ section.tabSection {
     display: none;
 }
 
+#different-pass{
+    display: none;
+}
+
+#invalid-email-signup{
+    display: none;
+}
+
+#blank-space-signup{
+    display: none;
+}
+
+#email-registered{
+    display: none;
+}
+
 #wrong-pswd{
     display: none;
 }
