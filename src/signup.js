@@ -22,14 +22,25 @@ window.onload = () => {
       loading.style.marginBottom = "30px";
       await registration(user);
     }catch(err){
-      if (err === 'error-different-passwords') {
-        // There's a same email registered
-        document.getElementById("different-pass").style.display = "flex";
-      } else if (err.code === '') {
+      if (err === 'empty-values') {
+        // There's any blank space
+        document.getElementById("blank-space").style.display = "flex";
+
+      }else if (err === 'different-passwords') {
         // Password and confirm passwords are differents
-        console.log(err)
+        document.getElementById("different-pass").style.display = "flex";
+
+      } else if (err.code === 'auth/email-already-in-use') {
+        // There's a same email registered
+        document.getElementById("email-registered").style.display = "flex";
+
       } else if (err.code === 'auth/invalid-email') {
-        console.log(err)
+        // Email entered is invalid
+        document.getElementById("invalid-email").style.display = "flex";
+
+      } else {
+        // When any other error happens
+        document.getElementById("any-error").style.display = "flex";
       }
     }finally{
       loading.style.display = "none";

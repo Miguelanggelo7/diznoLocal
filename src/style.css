@@ -283,35 +283,7 @@ section.tabSection {
     background-color: rgba(187, 187, 187, 0.356);
 }
 
-#blank-space{
-    display: none;
-}
-
-#user-not-found{
-    display: none;
-}
-
-#invalid-email{
-    display: none;
-}
-
-#different-pass{
-    display: none;
-}
-
-#invalid-email-signup{
-    display: none;
-}
-
-#blank-space-signup{
-    display: none;
-}
-
-#email-registered{
-    display: none;
-}
-
-#wrong-pswd{
+#blank-space, #user-not-found, #invalid-email, #different-pass, #email-registered, #wrong-pswd, #any-error{
     display: none;
 }
 
