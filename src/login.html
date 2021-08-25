@@ -2,13 +2,13 @@
 <html>
 <head>
 	<title>Login</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script type="module" src="login.js"></script>
@@ -22,21 +22,27 @@
       <input type="password" class="input-form" id="login-password" placeholder="Password">
       <input type="button" class="button-form" id="login" value="Login"/>
     </form>
-    <a id="login-forgotpsw" class="open-modal" data-open="modal1" href="">Forgot password</a>
+    <a id="login-forgotpsw" class="open-modal" data-toggle="modal" data-target="#exampleModalCenter" href="">Forgot password</a>
   </div>
- 
-  <div class="modal" id="modal1">
-    <div class="modal-dialog">
-      <header class="modal-header">
-        <h5>Reset your account password</h5>
-      </header>
-      <section class="modal-content">
-        <input type="text" class="input-form" id="forgot-email-user">
-      </section>
-      <footer>
-        <input type="button" id="cancel-forgot" value="Cancel"/>
-        <input type="button" id="send-forgot" value="Send password reset email"/>
-      </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h1>hola</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
   </div>
 
