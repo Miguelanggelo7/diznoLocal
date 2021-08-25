@@ -22,7 +22,22 @@
       <input type="password" class="input-form" id="login-password" placeholder="Password">
       <input type="button" class="button-form" id="login" value="Login"/>
     </form>
-    <a id="login-forgotpsw" href="">Forgot password</a>
+    <a id="login-forgotpsw" class="open-modal" data-open="modal1" href="">Forgot password</a>
+  </div>
+ 
+  <div class="modal" id="modal1">
+    <div class="modal-dialog">
+      <header class="modal-header">
+        <h5>Reset your account password</h5>
+      </header>
+      <section class="modal-content">
+        <input type="text" class="input-form" id="forgot-email-user">
+      </section>
+      <footer>
+        <input type="button" id="cancel-forgot" value="Cancel"/>
+        <input type="button" id="send-forgot" value="Send password reset email"/>
+      </footer>
+    </div>
   </div>
 
 </body>

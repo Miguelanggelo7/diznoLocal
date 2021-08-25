@@ -1,5 +1,6 @@
 const { loginEmailAndPass } = require("./firebase/functions");
-const { auth } = require("./firebase/config")
+const { auth } = require("./firebase/config");
+const { BrowserWindow } = require("electron");
 
 auth.onAuthStateChanged(user => {
   if(user){
@@ -12,7 +13,7 @@ auth.onAuthStateChanged(user => {
 window.onload = () => { 
   const email = document.getElementById("login-email");
   const password = document.getElementById("login-password");
-  const btnlogin = document.getElementById("login")
+  const btnlogin = document.getElementById("login");
 
   btnlogin.addEventListener("click", async() => {
     const user = { 

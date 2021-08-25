@@ -140,7 +140,6 @@ section.tabSection {
     width: 90%;
     margin-bottom: 15px;
     border: none;
-    border-color: #000;
     border-radius: 3px;
     height: 45px;
     padding-left: 15px;
@@ -159,8 +158,57 @@ section.tabSection {
 #email-user{
     margin: auto;
     overflow: hidden;
-    margin-bottom: 30px;
+    border: solid 1px;
+    border-color: #bbb;
+    margin-bottom: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#pswd-user{
+    margin: auto;
+    overflow: hidden;
+    border: solid 1px;
+    border-color: #bbb;
+    margin-bottom: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.button-edit-info{
+    margin-bottom: 15px;
+    border-radius: 3px;
+    height: 45px;
+    width: 60px;
+    outline: none;
+    background-color: #fff;
+    overflow: hidden;
     text-align: center;
+    border: solid 1px;
+    border-color: #bbb;
+    margin-bottom: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: all .5s;
+}
+
+.button-edit-info:hover{
+    background-color: #bbb;
+}
+
+.title-info-account{
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.box-info-account{
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.container-info-account{
+    margin-top: 40px;
 }
 
 .button-logout {
@@ -211,17 +259,47 @@ section.tabSection {
     text-decoration: none;
 }
 
-
 @media (min-width: 1200px) {
 	section.tabSection .container {
        max-width: 950px;
     }
+    .container-info-account{
+        display: inline-flex;
+    }
+    .box-info-account{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #email-user{
+        width: 30vw;
+    }
+    #pswd-user{
+        width: 30vw;
+    }
+}
+
+@media (min-width: 800px) {
+	.container-info-account{
+        display: inline-flex;
+    }
+    .box-info-account{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #email-user{
+        width: 30vw;
+    }
+    #pswd-user{
+        width: 30vw;
+    }
+
 }
 
 @media (max-width: 800px) {
 	.sidebox {
 		max-width: 100%;
 	}
+
 }
 
 @media (max-width: 480px) {

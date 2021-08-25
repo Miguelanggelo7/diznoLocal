@@ -13,8 +13,7 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   
 </head>
-<body>
-
+<body class="login-background">
 	<!-- Nav Section -->
 	<section class="CustomNav">
 		<div class="container">
@@ -92,8 +91,19 @@
 							<p>Second Tab</p>
 						</div>
 						<div class="tab-pane" id="tabs-3" role="tabpanel">
-							<p>Email</p>
-							<input type="text" class="input-form" id="email-user" readonly >
+							<h5>My Account</h5>
+							<div class="container-info-account">
+							  <div class="box-info-account">
+                  <h6 class="title-info-account">Email Address</h6>
+								  <input type="text" class="input-form" id="email-user" readonly>
+                  <input type="button" class="button-edit-info" id="edit-email" value="Edit"/>
+								</div>
+								<div class="box-info-account">
+                  <h6 class="title-info-account">Password</h6>
+								  <input type="password" class="input-form" id="pswd-user" readonly>
+                  <input type="button" class="button-edit-info" id="edit-pswd" value="Edit"/>
+								</div>
+							</div>
 							<input type="button" class="button-logout" id="logout" value="Log Out"/>
 						</div>
 					</div>
