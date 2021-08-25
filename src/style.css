@@ -259,6 +259,34 @@ section.tabSection {
     text-decoration: none;
 }
 
+#forgot-email {
+    margin: auto;
+    
+    overflow: hidden;
+    border: solid 1px;
+    border-color: #bbb;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.button-modal-forgot{
+    background-color: transparent;
+    border: solid 1px;
+    border-color: rgba(187, 187, 187, 0.356);
+    width: 50%;
+    height: 60px;
+}
+
+.button-modal-forgot:hover{
+    background-color: rgba(187, 187, 187, 0.356);
+}
+
+.flex-div{
+    display: inline-flex;
+}
+
 #reset-pswd{
     background-color: transparent;
     margin-top: 30px;
