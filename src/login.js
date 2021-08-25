@@ -15,6 +15,37 @@ window.onload = () => {
   const password = document.getElementById("login-password");
   const btnlogin = document.getElementById("login");
   const loading = document.getElementById('loading');
+  const BS = document.getElementById('blank-space');
+  const closeBS = document.getElementById('blank-space-close');
+  const IM = document.getElementById("invalid-email");
+  const closeIM = document.getElementById("invalid-email-close");
+  const UNF = document.getElementById("user-not-found");
+  const closeUNF = document.getElementById("user-not-found-close");
+  const WP = document.getElementById("wrong-pswd");
+  const closeWP = document.getElementById("wrong-pswd-close");
+  const AE = document.getElementById("any-error");
+  const closeAE = document.getElementById("any-error-close");
+
+  closeAE.addEventListener("click", async() => {
+    AE.style.display = "none"
+  });
+
+
+  closeWP.addEventListener("click", async() => {
+    WP.style.display = "none"
+  });
+
+  closeBS.addEventListener("click", async() => {
+    BS.style.display = "none"
+  });
+
+  closeIM.addEventListener("click", async() => {
+    IM.style.display = "none"
+  });
+
+  closeUNF.addEventListener("click", async() => {
+    UNF.style.display = "none"
+  });
 
   btnlogin.addEventListener("click", async() => {
     const user = { 
@@ -30,23 +61,23 @@ window.onload = () => {
     }catch (err) {
       if (err.code === "auth/invalid-email") {
         // Email entered is invalid
-        document.getElementById("invalid-email").style.display = "flex";
+        IM.style.display = "flex";
 
       } else if (err.code === "auth/user-not-found") {
         // Email entered is not registered
-        document.getElementById("user-not-found").style.display = "flex";
+        UNF.style.display = "flex";
 
       } else if (err.code === "auth/wrong-password") {
         // The password is wrong
-        document.getElementById("wrong-pswd").style.display = "flex";
+        WP.style.display = "flex";
 
       } else if (err === 'empty-values') {
         // There's an empty space
-        document.getElementById("blank-space").style.display = "flex";
+        BS.style.display = "flex";
 
       } else {
         // When any other error happens
-        document.getElementById("any-error").style.display = "flex";
+        AE.style.display = "flex";
 
       }
     } finally{

@@ -7,6 +7,37 @@ window.onload = () => {
   const confirmPassword = document.getElementById('confirm-password');
   const btnSignup = document.getElementById('signup');
   const loading = document.getElementById('loading');
+  const AE = document.getElementById("any-error");
+  const closeAE = document.getElementById("any-error-close");
+  const BS = document.getElementById('blank-space');
+  const closeBS = document.getElementById('blank-space-close');
+  const IM = document.getElementById("invalid-email");
+  const closeIM = document.getElementById("invalid-email-close");
+  const DP = document.getElementById("different-pass")
+  const closeDP = document.getElementById("different-pass-close")
+  const ER = document.getElementById("email-registered")
+  const closeER = document.getElementById("email-registered-close")
+
+  closeDP.addEventListener("click", async() => {
+    DP.style.display = "none"
+  });
+
+  closeER.addEventListener("click", async() => {
+    ER.style.display = "none"
+  });
+
+  closeAE.addEventListener("click", async() => {
+    AE.style.display = "none"
+  });
+
+  closeBS.addEventListener("click", async() => {
+    BS.style.display = "none"
+  });
+
+  closeIM.addEventListener("click", async() => {
+    IM.style.display = "none"
+  });
+
 
   btnSignup.addEventListener("click", async() => {
     
@@ -24,23 +55,23 @@ window.onload = () => {
     }catch(err){
       if (err === 'empty-values') {
         // There's any blank space
-        document.getElementById("blank-space").style.display = "flex";
+        BS.style.display = "flex";
 
       }else if (err === 'different-passwords') {
         // Password and confirm passwords are differents
-        document.getElementById("different-pass").style.display = "flex";
+        DP.style.display = "flex";
 
       } else if (err.code === 'auth/email-already-in-use') {
         // There's a same email registered
-        document.getElementById("email-registered").style.display = "flex";
+        ER.style.display = "flex";
 
       } else if (err.code === 'auth/invalid-email') {
         // Email entered is invalid
-        document.getElementById("invalid-email").style.display = "flex";
+        IM.style.display = "flex";
 
       } else {
         // When any other error happens
-        document.getElementById("any-error").style.display = "flex";
+        AE.style.display = "flex";
       }
     }finally{
       loading.style.display = "none";
