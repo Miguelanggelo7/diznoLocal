@@ -1,15 +1,23 @@
 const { auth, db } = require("./config.js");
 
+
 // Log in with email and password
 const loginEmailAndPass = (email, pass) => {
+  if(email === "" || pass === "") throw 'empty-values';
   const promise = auth.signInWithEmailAndPassword(email, pass);
   return promise;
 };
 
 // Logout
-const logout = () => {
-  auth.signOut();
+const logout = async() => {
+  await auth.signOut();
+  window.location = 'login.html';
 };
+
+// Get current user
+const getUser = () => {
+  return {email: auth.currentUser.email}
+} 
 
 // Get all users 
 const getUsers = async () => {
@@ -38,7 +46,9 @@ const registration = async(user) => {
     email: user.email
   }
 
-  return db.collection('users').doc(uid).set(data);
+  await db.collection('users').doc(uid).set(data);
+  localStorage.setItem('currentEmail', data.email);
+  window.location = 'index.html';
 }
 
 const updateUser = async (user, newUser) => {
@@ -50,6 +60,7 @@ const updateUser = async (user, newUser) => {
 };
 
 module.exports = {
+  getUser,
   loginEmailAndPass,
   logout,
   getUsers,

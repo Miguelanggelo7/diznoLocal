@@ -1,4 +1,5 @@
-const { registration } = require("./functions");
+const { registration } = require("./firebase/functions");
+
 
 window.onload = () => { 
   const email = document.getElementById("register-email")
@@ -7,6 +8,7 @@ window.onload = () => {
   const btnSignup = document.getElementById('signup')
 
   btnSignup.addEventListener("click", async() => {
+    
     const user = { 
       email: email.value, 
       pass: password.value,

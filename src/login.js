@@ -1,4 +1,13 @@
-const { loginEmailAndPass } = require("./functions");
+const { loginEmailAndPass } = require("./firebase/functions");
+const { auth } = require("./firebase/config")
+
+auth.onAuthStateChanged(user => {
+  if(user){
+    if(localStorage.getItem('currentEmail') !== user.email) 
+      localStorage.setItem('currentEmail', user.email);
+    window.location.href = 'index.html';
+  }
+});
 
 window.onload = () => { 
   const email = document.getElementById("login-email");
@@ -20,6 +29,8 @@ window.onload = () => {
 
       } else if (err.code === "auth/wrong-password") {
 
+      } else if (err === 'empty-values') {
+        console.log('empty-values')
       }
     }
 
