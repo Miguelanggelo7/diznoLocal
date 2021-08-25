@@ -40,7 +40,28 @@
         </div>
           <div class="flex-div">
             <button type="button" class="button-modal-forgot" data-dismiss="modal">Close</button>
-            <button type="button" class="button-modal-forgot" id="save-change-pswd" >Save changes</button>
+            <button type="button" class="button-modal-forgot" id="save-change-pswd" data-toggle="modal" data-dismiss="modal" aria-label="Close" data-target="#exampleModalCenter2">Save changes</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter2" tabindex="-2" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle2">Reset your account password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="email" class="input-form" id="forgot-email" placeholder="Insert the verification code sent to your email">
+        </div>
+          <div class="flex-div">
+            <button type="button" class="button-modal-forgot" data-dismiss="modal">Close</button>
+            <button type="button" class="button-modal-forgot" id="save-change-pswd">Save changes</button>
           </div>
       </div>
     </div>
