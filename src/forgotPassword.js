@@ -15,6 +15,8 @@ const closeAE = document.getElementById('any-error-close-forgot');
 const SF = document.getElementById("success-forgot");
 const closeSF = document.getElementById("success-forgot-close");
 
+const modal = document.getElementById("exampleModalCenter");
+
 closeSF.addEventListener("click", () => {
   SF.style.display = "none"
 });
@@ -36,6 +38,8 @@ emailNext.addEventListener('click', async () => {
     // Firebase is going to try to send an email to the email address
     await forgotPassword(email.value);
     SF.style.display = 'flex';
+    $('#exampleModalCenter').modal('hide');
+
   } catch (err) {
     console.log(err.code)
     if (err.code === 'auth/invalid-email') {
