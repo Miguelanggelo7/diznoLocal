@@ -100,7 +100,7 @@
 								</div>
 							</div>
 							<br/>
-							<input type="button" id="reset-pswd" value="Reset password"/>
+							<input type="button" id="reset-pswd" data-toggle="modal" data-target="#exampleModalCenter2" value="Reset password"/>
 							<br/>
 							<input type="button" class="button-logout" id="logout" value="Log Out"/>
 						</div>
@@ -128,6 +128,12 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
+			<div id="wrong-pswd" class="alert alert-danger alert-dismissible fade show" role="alert">
+				The password entered is incorrect.
+			   <button type="button" class="close" id="wrong-pswd-close" aria-label="Close">
+				 <span aria-hidden="true">&times;</span>
+			   </button>
+			 </div>
 			<div id="found-email" class="alert alert-danger alert-dismissible fade show" role="alert">
 				The email entered is registered.
 				<button type="button" class="close" id="found-email-close" aria-label="Close">
@@ -148,7 +154,62 @@
 			</div>
 
 			<div class="modal-body">
+				<input type="email" class="input-form" id="password-new-email" placeholder="Password">
 				<input type="email" class="input-form" id="new-email" placeholder="New Email">
+			</div>
+			<div class="flex-div">
+				<button type="button" class="button-modal-forgot" data-dismiss="modal">Close</button>
+				<button type="button" class="button-modal-forgot" id="save-new-email" data-toggle="modal" aria-label="Close">Save</button>
+			</div>
+		</div>
+	</div>
+</div>  
+
+<!-- Modal reset password -->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Reset your account password</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div id="blank-space" class="alert alert-danger alert-dismissible fade show" role="alert">
+				Do not leave blank spaces.
+			  <button type="button" class="close" id="blank-space-close" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div id="wrong-pswd" class="alert alert-danger alert-dismissible fade show" role="alert">
+				The password entered is incorrect.
+			   <button type="button" class="close" id="wrong-pswd-close" aria-label="Close">
+				 <span aria-hidden="true">&times;</span>
+			   </button>
+			 </div>
+			<div id="same-password" class="alert alert-danger alert-dismissible fade show" role="alert">
+				The passwords are the same.
+				<button type="button" class="close" id="found-email-close" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div id="any-error" class="alert alert-danger alert-dismissible fade show" role="alert">
+				An error has occurred, please try again later.
+				<button type="button" class="close" id="any-error-newEmail-close" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div id="success-update" class="alert alert-success alert-dismissible fade show" role="alert">
+				Email changed successfully
+				<button type="button" class="close" id="success-update-close" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				<input type="email" class="input-form" id="old-password" placeholder="Old Password">
+				<input type="email" class="input-form" id="new-password" placeholder="New Password">
 			</div>
 			<div class="flex-div">
 				<button type="button" class="button-modal-forgot" data-dismiss="modal">Close</button>
