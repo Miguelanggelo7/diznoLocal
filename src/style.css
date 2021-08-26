@@ -259,9 +259,8 @@ section.tabSection {
     text-decoration: none;
 }
 
-#forgot-email {
+#forgot-email, #new-email, #new-telephone {
     margin: auto;
-    
     overflow: hidden;
     border: solid 1px;
     border-color: #bbb;
@@ -283,7 +282,7 @@ section.tabSection {
     background-color: rgba(187, 187, 187, 0.356);
 }
 
-#success-forgot, #blank-space, #user-not-found, #invalid-email, #different-pass, #email-registered, #wrong-pswd, #any-error, #invalid-email-forgot, #not-found-forgot, #any-error-forgot{
+#found-email, #success-forgot, #blank-space, #user-not-found, #invalid-email, #different-pass, #email-registered, #wrong-pswd, #any-error, #invalid-email-forgot, #not-found-forgot, #any-error-forgot{
     display: none;
 }
 
@@ -349,10 +348,10 @@ section.tabSection {
 		max-width: 100%;
 	}
     #email-user{
-        width: 30vw;
+        width: 70%;
     }
     #pswd-user{
-        width: 30vw;
+        width: 70%;
     }
 }
 
