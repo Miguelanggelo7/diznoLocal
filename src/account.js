@@ -69,6 +69,7 @@ window.onload = () => {
       emailInput.value = emailModalInput.value;
 
       SU.style.display = 'flex';
+      $('#exampleModalCenter').modal('hide');
     } catch (err) {
       if (err.code === 'auth/invalid-email') {
         IM.style.display = 'flex';
