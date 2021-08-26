@@ -126,6 +126,7 @@ window.onload = () => {
       await updatePass(emailInput.value, oldPassword.value, newPassword.value);
 
       SP.style.display = 'flex';
+      $('#exampleModalCenter2').modal('hide');
     } catch (err) {
       if (err === 'blank-spaces') {
         BE.style.display = 'flex';
