@@ -37,8 +37,9 @@ const updateEmail = async (email, password, newEmail) => {
 
 // Update password
 const updatePass = async (email, password, newPass) => {
+  if(password === '' || newPass === '') throw 'blank-spaces';
   const login = await auth.signInWithEmailAndPassword(email, password);
-  login.user.updatePassword(newPass);
+  return login.user.updatePassword(newPass);
 }
 
 // Forgot Password
