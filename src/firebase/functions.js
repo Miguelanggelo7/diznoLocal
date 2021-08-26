@@ -26,8 +26,19 @@ const getUsers = async () => {
 }
 
 // Update email
-const updateEmail = async (email) => {
-  return auth.currentUser.updateEmail(email);
+const updateEmail = async (email, password, newEmail) => {
+  const login = await auth.signInWithEmailAndPassword(email, password);
+  await login.user.updateEmail(newEmail);
+  updateUser(auth.currentUser.uid, {
+    uid: auth.currentUser.uid,
+    email: newEmail,
+  });
+}
+
+// Update password
+const updatePass = async (email, password, newPass) => {
+  const login = await auth.signInWithEmailAndPassword(email, password);
+  login.user.updatePassword(newPass);
 }
 
 // Forgot Password
@@ -58,10 +69,10 @@ const registration = async(user) => {
   window.location = 'index.html';
 }
 
-const updateUser = async (user, newUser) => {
+const updateUser = async (uid, newUser) => {
   const promise = db
     .collection('users') 
-    .doc(user.uid)
+    .doc(uid)
     .update(newUser);
   return promise;
 };
@@ -74,5 +85,6 @@ module.exports = {
   registration,
   updateUser,
   forgotPassword,
-  updateEmail
+  updateEmail,
+  updatePass
 }

@@ -2,8 +2,15 @@ window.onload = () => {
   const logoutBtn = document.getElementById('logout');
   const emailInput = document.getElementById('email-user');
 
-  const newEmailBtn = document.getElementById('save-new-email');
+  const oldPassword = document.getElementById('old-password');
+  const newPassword = document.getElementById('new-password');
+  const newPasswordBtn = document.getElementById('save-new-password');
+
   const emailModalInput = document.getElementById('new-email');
+  const password = document.getElementById('password-new-email');
+
+  const closeModalEmail = document.getElementById('close-newMail-modal');
+  const newEmailBtn = document.getElementById('save-new-email');
 
   const IM = document.getElementById('invalid-newEmail');
   const closeIM = document.getElementById('invalid-newEmail-close');
@@ -17,9 +24,16 @@ window.onload = () => {
   const SU = document.getElementById('success-update');
   const closeSU = document.getElementById('success-update-close');
 
+  const WP = document.getElementById('wrong-pswd');
+  const closeWP = document.getElementById('wrong-pswd-close');
 
   emailInput.value = localStorage.getItem('currentEmail');
   
+  closeModalEmail.addEventListener('click', () => {
+    emailModalInput.value = '';
+    password.value = '';
+  });
+
   closeAE.addEventListener('click', () => {
     AE.style.display = 'none';
   });
@@ -34,7 +48,11 @@ window.onload = () => {
 
   closeSU.addEventListener('click', () => {
     SU.style.display = 'none';
-  })
+  });
+
+  closeWP.addEventListener('click', () => {
+    WP.style.display = 'none';
+  });
 
   logoutBtn.addEventListener('click', () => {
     const { logout } = require('./firebase/functions');
@@ -43,10 +61,14 @@ window.onload = () => {
 
   newEmailBtn.addEventListener('click', async() => {
     const { updateEmail } = require('./firebase/functions');
+    
     try {
-      await updateEmail(emailModalInput.value);
+      await updateEmail(emailInput.value, password.value, emailModalInput.value);
+
       localStorage.setItem('currentEmail', emailModalInput.value);
-      
+      emailInput.value = emailModalInput.value;
+
+      SU.style.display = 'flex';
     } catch (err) {
       if (err.code === 'auth/invalid-email') {
         IM.style.display = 'flex';
@@ -54,11 +76,22 @@ window.onload = () => {
       } else if (err.code === 'auth/email-already-exists') {
         FM.style.display = 'flex';
 
+      } else if (err.code === 'auth/user-not-found') {
+        WP.style.display = 'flex';
+
       } else {
         AE.style.display = 'flex';
-
       }
     }
   });
   
+  // newPasswordBtn.addEventListener('click', async () => {
+  //   const { updatePass } = require('./firebase/functions');
+
+  //   try {
+
+  //   } catch (err) {
+
+  //   }
+  // });
 }
