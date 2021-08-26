@@ -283,7 +283,7 @@ section.tabSection {
     background-color: rgba(187, 187, 187, 0.356);
 }
 
-#blank-space, #user-not-found, #invalid-email, #different-pass, #email-registered, #wrong-pswd, #any-error{
+#blank-space, #user-not-found, #invalid-email, #different-pass, #email-registered, #wrong-pswd, #any-error, #invalid-email-forgot, #not-found-forgot, #any-error-forgot{
     display: none;
 }
 

@@ -18,23 +18,23 @@ window.onload = () => {
   const ER = document.getElementById("email-registered")
   const closeER = document.getElementById("email-registered-close")
 
-  closeDP.addEventListener("click", async() => {
+  closeDP.addEventListener("click", () => {
     DP.style.display = "none"
   });
 
-  closeER.addEventListener("click", async() => {
+  closeER.addEventListener("click", () => {
     ER.style.display = "none"
   });
 
-  closeAE.addEventListener("click", async() => {
+  closeAE.addEventListener("click", () => {
     AE.style.display = "none"
   });
 
-  closeBS.addEventListener("click", async() => {
+  closeBS.addEventListener("click", () => {
     BS.style.display = "none"
   });
 
-  closeIM.addEventListener("click", async() => {
+  closeIM.addEventListener("click", () => {
     IM.style.display = "none"
   });
 

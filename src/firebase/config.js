@@ -20,7 +20,7 @@ if (!firebase.apps.length)
   firebase.initializeApp(firebaseConfig);
 
 // Authentication
-const auth = firebase.auth();
+const auth = firebase.default.auth();
 // Firestore (Database)
 const db = firebase.firestore();
 // Analytics

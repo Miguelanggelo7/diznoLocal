@@ -26,24 +26,23 @@ window.onload = () => {
   const AE = document.getElementById("any-error");
   const closeAE = document.getElementById("any-error-close");
 
-  closeAE.addEventListener("click", async() => {
+  closeAE.addEventListener("click", () => {
     AE.style.display = "none"
   });
 
-
-  closeWP.addEventListener("click", async() => {
+  closeWP.addEventListener("click", () => {
     WP.style.display = "none"
   });
 
-  closeBS.addEventListener("click", async() => {
+  closeBS.addEventListener("click", () => {
     BS.style.display = "none"
   });
 
-  closeIM.addEventListener("click", async() => {
+  closeIM.addEventListener("click", () => {
     IM.style.display = "none"
   });
 
-  closeUNF.addEventListener("click", async() => {
+  closeUNF.addEventListener("click", () => {
     UNF.style.display = "none"
   });
 

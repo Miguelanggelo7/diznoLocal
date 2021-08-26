@@ -25,6 +25,11 @@ const getUsers = async () => {
   return users.docs.map((user) => user.data());
 }
 
+// Forgot Password
+const forgotPassword = (email) => {
+  return auth.sendPasswordResetEmail(email);
+}
+
 // User Registration
 const registration = async(user) => {
   if(user.email === "" || user.pass === "" || user.confirmPass === "") throw 'empty-values';
@@ -63,4 +68,5 @@ module.exports = {
   getUsers,
   registration,
   updateUser,
+  forgotPassword,
 }
