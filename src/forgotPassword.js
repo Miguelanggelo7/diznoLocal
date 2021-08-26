@@ -12,6 +12,13 @@ const closeUNF = document.getElementById('not-found-close-forgot');
 const AE = document.getElementById('any-error-forgot');
 const closeAE = document.getElementById('any-error-close-forgot');
 
+const SF = document.getElementById("success-forgot");
+const closeSF = document.getElementById("success-forgot-close");
+
+closeSF.addEventListener("click", () => {
+  SF.style.display = "none"
+});
+
 closeIM.addEventListener('click', () => {
   IM.style.display = 'none';
 });
@@ -28,6 +35,7 @@ emailNext.addEventListener('click', async () => {
   try {
     // Firebase is going to try to send an email to the email address
     await forgotPassword(email.value);
+    SF.style.display = 'flex';
   } catch (err) {
     console.log(err.code)
     if (err.code === 'auth/invalid-email') {

@@ -71,25 +71,31 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Reset your account password</h5>
-          <div id="invalid-email-forgot" class="alert alert-danger alert-dismissible fade show" role="alert">
-            It has to be a valid Email Address.
-            <button type="button" class="close" id="invalid-email-close-forgot" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div id="not-found-forgot" class="alert alert-danger alert-dismissible fade show" role="alert">
-            The email entered is not registered.
-            <button type="button" class="close" id="not-found-close-forgot" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div id="any-error-forgot" class="alert alert-danger alert-dismissible fade show" role="alert">
-            An error has occurred, please try again later.
-            <button type="button" class="close" id="any-error-close-forgot" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="invalid-email-forgot" class="alert alert-danger alert-dismissible fade show" role="alert">
+          It has to be a valid Email Address.
+          <button type="button" class="close" id="invalid-email-close-forgot" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="not-found-forgot" class="alert alert-danger alert-dismissible fade show" role="alert">
+          The email entered is not registered.
+          <button type="button" class="close" id="not-found-close-forgot" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="any-error-forgot" class="alert alert-danger alert-dismissible fade show" role="alert">
+          An error has occurred, please try again later.
+          <button type="button" class="close" id="any-error-close-forgot" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="success-forgot" class="alert alert-success alert-dismissible fade show" role="alert">
+          A password recovery link has been sent to your email.
+          <button type="button" class="close" id="success-forgot-close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -98,7 +104,7 @@
         </div>
         <div class="flex-div">
           <button type="button" class="button-modal-forgot" data-dismiss="modal">Close</button>
-          <button type="button" class="button-modal-forgot" id="send-email" data-toggle="modal" data-dismiss="modal" aria-label="Close">Send</button>
+          <button type="button" class="button-modal-forgot" id="send-email" data-toggle="modal" aria-label="Close">Send</button>
         </div>
       </div>
     </div>
