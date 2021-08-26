@@ -8,6 +8,7 @@ window.onload = () => {
 
   const emailModalInput = document.getElementById('new-email');
   const password = document.getElementById('password-new-email');
+  const closeModalPass = document.getElementById('close-pass-modal');
 
   const closeModalEmail = document.getElementById('close-newMail-modal');
   const newEmailBtn = document.getElementById('save-new-email');
@@ -24,6 +25,15 @@ window.onload = () => {
   const SU = document.getElementById('success-update');
   const closeSU = document.getElementById('success-update-close');
 
+  const SP = document.getElementById('success-update-password');
+  const closeSP = document.getElementById('success-update-password-close');
+
+  const AEP = document.getElementById('any-error-pass');
+  const closeAEP = document.getElementById('any-error-pass-close');
+
+  const BE = document.getElementById('blank-space');
+  const closeBE = document.getElementById('blank-space-close');
+
   const WP = document.getElementById('wrong-pswd');
   const closeWP = document.getElementById('wrong-pswd-close');
 
@@ -32,6 +42,29 @@ window.onload = () => {
   closeModalEmail.addEventListener('click', () => {
     emailModalInput.value = '';
     password.value = '';
+    IM.style.display = 'none';
+    FM.style.display = 'none';
+    WP.style.display = 'none';
+    AE.style.display = 'none';
+  });
+
+  closeModalPass.addEventListener('click', () => {
+    oldPassword.value = '';
+    newPassword.value = '';
+    AEP.style.display = 'none';
+    BE.style.display = 'none';
+  });
+
+  closeBE.addEventListener('click', () => {
+    BE.style.display = 'none';
+  });
+
+  closeAEP.addEventListener('click', () => {
+    AEP.style.display = 'none';
+  });
+
+  closeSP.addEventListener('click', () => {
+    SP.style.display = 'none';
   });
 
   closeAE.addEventListener('click', () => {
@@ -86,13 +119,21 @@ window.onload = () => {
     }
   });
   
-  // newPasswordBtn.addEventListener('click', async () => {
-  //   const { updatePass } = require('./firebase/functions');
+  newPasswordBtn.addEventListener('click', async () => {
+    const { updatePass } = require('./firebase/functions');
 
-  //   try {
+    try {
+      await updatePass(emailInput.value, oldPassword.value, newPassword.value);
 
-  //   } catch (err) {
-
-  //   }
-  // });
+      SP.style.display = 'flex';
+    } catch (err) {
+      if (err === 'blank-spaces') {
+        BE.style.display = 'flex';
+        
+      } else {
+        AEP.style.display = 'flex';
+  
+      }
+    }
+  });
 }

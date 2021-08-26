@@ -98,6 +98,12 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+              <div id="success-update-password" class="alert alert-success alert-dismissible fade show" role="alert">
+                Password changed successfully
+                <button type="button" class="close" id="success-update-password-close" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
 							<div class="container-info-account">
 							  <div class="box-info-account">
                   <h6 class="title-info-account">Email Address</h6>
@@ -183,35 +189,24 @@
 			</div>
 			<div id="wrong-pswd" class="alert alert-danger alert-dismissible fade show" role="alert">
 				The password entered is incorrect.
-			   <button type="button" class="close" id="wrong-pswd-close" aria-label="Close">
-				 <span aria-hidden="true">&times;</span>
-			   </button>
-			 </div>
-			<div id="same-password" class="alert alert-danger alert-dismissible fade show" role="alert">
-				The passwords are the same.
-				<button type="button" class="close" id="found-email-close" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div id="any-error" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" id="wrong-pswd-close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+			<div id="any-error-pass" class="alert alert-danger alert-dismissible fade show" role="alert">
 				An error has occurred, please try again later.
-				<button type="button" class="close" id="any-error-newEmail-close" aria-label="Close">
+				<button type="button" class="close" id="any-error-pass-close" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div id="success-update" class="alert alert-success alert-dismissible fade show" role="alert">
-				Email changed successfully
-				<button type="button" class="close" id="success-update-close" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
+			
 
 			<div class="modal-body">
 				<input type="password" class="input-form" id="old-password" placeholder="Old Password">
 				<input type="password" class="input-form" id="new-password" placeholder="New Password">
 			</div>
 			<div class="flex-div">
-				<button type="button" class="button-modal-forgot" data-dismiss="modal">Close</button>
+				<button type="button" class="button-modal-forgot" id="close-pass-modal" data-dismiss="modal">Close</button>
 				<button type="button" class="button-modal-forgot" id="save-new-password" data-toggle="modal" aria-label="Close">Save</button>
 			</div>
 		</div>
