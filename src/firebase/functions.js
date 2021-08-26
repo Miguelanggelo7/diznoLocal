@@ -25,6 +25,11 @@ const getUsers = async () => {
   return users.docs.map((user) => user.data());
 }
 
+// Update email
+const updateEmail = async (email) => {
+  return auth.currentUser.updateEmail(email);
+}
+
 // Forgot Password
 const forgotPassword = (email) => {
   return auth.sendPasswordResetEmail(email);
@@ -69,4 +74,5 @@ module.exports = {
   registration,
   updateUser,
   forgotPassword,
+  updateEmail
 }
